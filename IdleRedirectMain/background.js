@@ -1,4 +1,4 @@
-let DefaultUrl = "https://oceanside.iii.com"
+let DefaultUrl = "https://www.google.com"
 let DefaultTimeout = 30
 chrome.storage.sync.get(["Url"], url => {
   url = url["Url"]
@@ -45,42 +45,5 @@ const IdleCheck = () => {
 const getUrl = (callback) => {
   chrome.storage.sync.get("Url", callback);
 }
-
-/* chrome.runtime.onConnect.addListener(port => {
-  if (port.name === 'keepAlive') {
-    lifeline = port;
-    setTimeout(keepAliveForced, 295e3); // 5 minutes minus 5 seconds
-    port.onDisconnect.addListener(keepAliveForced);
-  }
-});
-
-const keepAliveForced = () => {
-  lifeline?.disconnect();
-  lifeline = null;
-  keepAlive();
-}
-
-const keepAlive = async () => {
-  if (lifeline) return;
-  for (const tab of await chrome.tabs.query({ url: '*://add * here/*' })) {
-    try {
-      await chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        function: () => chrome.runtime.connect({ name: 'keepAlive' }),
-      });
-      chrome.tabs.onUpdated.removeListener(retryOnTabUpdate);
-      return;
-    } catch (e) {}
-  }
-  chrome.tabs.onUpdated.addListener(retryOnTabUpdate);
-}
-
-const retryOnTabUpdate = async (tabId, info, tab) => {
-  if (info.url && /^(file|https?):/.test(info.url)) {
-    keepAlive();
-  }
-}
-
-keepAlive(); */
 
 setInterval(IdleCheck, 4000)
