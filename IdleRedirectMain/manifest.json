@@ -1,0 +1,29 @@
+{
+    "name": "Idle Redirect",
+    "description": "Redirect users to a specific page after a customizable period of inactivity",
+    "version": "1.2",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "permissions": [
+      "storage",
+      "idle",
+      "tabs"
+    ],
+    "icons": {
+      "16": "images/icon16.png",           
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png" 
+    },
+    "browser_action": {
+      "default_icon": {   
+        "128": "images/icon128.png"   
+      },
+      "default_title": "Click Me",
+      "default_popup": "popup.html"  
+    }
+    
+  }
