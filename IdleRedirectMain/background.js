@@ -16,10 +16,6 @@ chrome.storage.sync.get(["Timeout"], timeout => {
     }
 });
 
-chrome.idle.setDetectionInterval(
-    15
-);
-
 const IdleCheck = currentState => {
     if (currentState != "active") {
         chrome.tabs.query({active: true, lastFocusedWindow: true}, (tabs) => {
