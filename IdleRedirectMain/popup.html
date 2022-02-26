@@ -34,12 +34,13 @@
             <form id="options" action="/action_page.php">
                 <div class="form-group">
                     <label for="redirectUrl">Redirect Url: </label>
-                    <input type="text" class="form-control" id="redirectUrl" placeholder="Redirect Url">
+                    <input type="text" class="form-control" id="redirectUrl" aria-describedby="timeHelp" placeholder="Redirect Url">
+                    <small id="urlDisplay" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="timeout">Timeout: </label>
                     <input type="number" class="form-control" id="timeout" aria-describedby="timeHelp" placeholder="Time">
-                    <small id="timeHelp" class="form-text text-muted">Time is in seconds.</small>
+                    <small id="timeDisplay" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <select class="form-control">

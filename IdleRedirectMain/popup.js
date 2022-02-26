@@ -24,15 +24,37 @@ const getValues = () => {
     text = "Nothing entered!"
     }
     document.getElementById("showValue").innerHTML = text;
+    getUrl((value) => {
+      document.getElementById("urlDisplay").innerHTML = value;
+    });
+    getTimeout((value) => {
+      document.getElementById("timeoutDisplay").innerHTML = value;
+    })
   }
 
 const testUrl = () => {
-  getStorage((value) => {
+  getUrl((value) => {
   chrome.tabs.create({ url: value["Url"] });
   });
 }
-const getStorage = callback => {
+const getUrl = callback => {
   chrome.storage.sync.get("Url", callback);
 }
+const getTimeout = callback => {
+  chrome.storage.sync.get("Timeout", callback)
+}
+
+document.getElementById("urlDisplay").innerHTML = "Loading";
+document.getElementById("timeDisplay").innerHTML = "Loading";
+
+setTimeout(() => {getUrl((value) => {
+  document.getElementById("urlDisplay").innerHTML = value["Url"];
+});
+getTimeout((value) => {
+  document.getElementById("timeDisplay").innerHTML = value["Timeout"];
+})
+},
+100);
+
 document.getElementById('submit').addEventListener('click', getValues);
 document.getElementById('urltest').addEventListener('click', testUrl);
