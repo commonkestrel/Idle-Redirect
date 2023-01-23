@@ -4,4 +4,4 @@ This is a chrome extension that can redirect your current tab to a specified web
 
 ---
 
-This extension uses Google's Manifest V2, which is depreciated and will not work as of January 2023. [background-new.js](https://github.com/Jibble330/Idle-Redirect/blob/main/IdleRedirectMain/background-new.js) and [manifest-new.json](https://github.com/Jibble330/Idle-Redirect/blob/main/IdleRedirectMain/manifest-new.json) are and in progress fix to this, hopefully being able to work on Manifest V3, but as of now they break when the extension is reloaded. 
+This extension uses Google's Manifest V2, which is depreciated and will not work as of January 2023. [background-new.js](https://github.com/commonkestrel/Idle-Redirect/blob/main/IdleRedirectMain/background-new.js) and [manifest-new.json](https://github.com/commonkestrel/Idle-Redirect/blob/main/IdleRedirectMain/manifest-new.json) are and in progress fix to this, hopefully being able to work on Manifest V3, but as of now they break when the extension is reloaded. 
